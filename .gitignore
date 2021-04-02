@@ -1,3 +1,7 @@
+*.jpeg
+*.jpg
+*.png
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -88,3 +92,4 @@ Desktop.ini
 # Thumbnails
 ._*
 Thumbs.db
+proyecto_web/settings.py
