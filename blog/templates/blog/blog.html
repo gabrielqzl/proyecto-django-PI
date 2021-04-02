@@ -1,0 +1,39 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+    {% for post in posts %}
+        <div class="row  justify-content-center">
+            <div class="card m-2 col-12 col-lg-10" >
+                <img src="{{ post.imagen.url }}" class="card-img-top" alt="">
+                
+                <div class="card-body">
+                    <h3 class="card-title">{{ post.titulo }}</h3>
+                    <h6 class="card-subtitle mb-2 text-muted">Autor: {{ post.autor }}</h6>
+                    <p class="card-text">{{ post.contenido }}</p>
+                    
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+        
+    <section>
+        <div style="width: 75%; margin: auto; text-align: center; color: #fff;">
+            Categorías:
+            {% for post in posts %}
+
+                {% for categoria in post.categoria.all %}
+                    <a href="{% url 'categoria' categoria.id %}" class="linksCategorias">
+                        {{ categoria.nombre }}
+                    </a>
+                {% endfor%}
+
+            {% endfor%}
+        </div>
+    </section>
+</div>
+
+{% endblock %}

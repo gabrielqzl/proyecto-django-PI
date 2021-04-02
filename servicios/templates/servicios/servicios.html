@@ -1,0 +1,41 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-4">
+    {% for servicio in servicios %}
+    <div class="row  justify-content-center">
+        <div class="card m-2 col-12 col-lg-10" >
+            <img src="{{ servicio.imagen.url }}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-title">{{ servicio.titulo }}</h5>
+                <p class="card-text">{{ servicio.contenido }}</p>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% comment %} {% for servicio in servicios %}
+
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ servicio.imagen.url }}" alt="" style="width: 40%;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-lower">{{ servicio.titulo }}</span>
+                    <span class="section-heading-upper">{{ servicio.contenido }}</span>
+                </h2>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endfor %} {% endcomment %}
+
+
+{% endblock %}
